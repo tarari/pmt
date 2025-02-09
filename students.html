@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+  <title>Gestió d'Alumnes</title>
+  <link rel="stylesheet" href="public/css/styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+  <h1 class="text-xl text-blue-500">Gestió d'Alumnes</h1>
+  <form id="addStudentForm" class="flex flex-col">
+    <input type="text" id="name" placeholder="Nom" required>
+    <input type="email" id="email" placeholder="Correu electrònic" required>
+    <input type="text" id="group_name" placeholder="Grup" required>
+    <button type="submit">Afegir Alumne</button>
+  </form>
+
+  <table id="studentsTable">
+    <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Correu</th>
+        <th>Grup</th>
+        <th>Accions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Dades carregades dinàmicament -->
+    </tbody>
+  </table>
+
+  <script src="public/js/students.js"></script>
+</body>
+</html>

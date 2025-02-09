@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestió d'Activitats</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+  <h1>Gestió d'Activitats</h1>
+
+  <form id="addActivityForm">
+    <input type="text" id="title" placeholder="Títol de l'activitat" required>
+    <textarea id="description" placeholder="Descripció" required></textarea>
+    <input type="date" id="deadline" placeholder="Data límit" required>
+    <button type="submit">Afegir Activitat</button>
+  </form>
+
+  <table id="activitiesTable">
+    <thead>
+      <tr>
+        <th>Títol</th>
+        <th>Descripció</th>
+        <th>Data límit</th>
+        <th>Accions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Les activitats es carregaran dinàmicament aquí -->
+    </tbody>
+  </table>
+
+    <script src="public/js/activities.js"></script>
+</body>
+</html>
