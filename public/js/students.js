@@ -1,5 +1,5 @@
-const dotenv = require('dotenv');
-dotenv.config();
+
+
 document.getElementById('addStudentForm').addEventListener('submit', async (e) => {
     e.preventDefault();
 
@@ -8,7 +8,7 @@ document.getElementById('addStudentForm').addEventListener('submit', async (e) =
       email: document.getElementById('email').value,
       group_name: document.getElementById('group_name').value,
     };
-  const url=process.env.app.url+":5001/students";
+  const url=window.location.origin+":5001/students";
     try {
       const response = await fetch(url, {
         method: 'POST',
@@ -26,8 +26,8 @@ document.getElementById('addStudentForm').addEventListener('submit', async (e) =
 
   async function fetchStudents() {
     try {
-      const url=process.env.app.url+":5001/students";
-      const response = await fetch(process.env.app.url+":5001/students");
+      const url=window.location.origin+":5001/students";
+      const response = await fetch(window.location.origin+":5001/students");
       if (!response.ok) throw new Error('Error obtenint estudiants');
       const students = await response.json();
       const tableBody = document.querySelector('#studentsTable tbody');

@@ -1,5 +1,4 @@
-const dotenv = require('dotenv');
-dotenv.config();
+
 
 document.getElementById('addActivityForm').addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -9,7 +8,7 @@ document.getElementById('addActivityForm').addEventListener('submit', async (e) 
       description: document.getElementById('description').value,
       deadline: document.getElementById('deadline').value,
     };
-    const url=process.env.app.url+":5001/activities";
+    const url=window.location.origin+":5001/activities";
     try {
       const response = await fetch(url, {
         method: 'POST',
@@ -27,7 +26,7 @@ document.getElementById('addActivityForm').addEventListener('submit', async (e) 
 
   async function fetchActivities() {
     try {
-        const url=process.env.app.url+":5001/activities";
+        const url=window.location.origin+":5001/activities";
 
       const response = await fetch(url);
       if (!response.ok) throw new Error('Error obtenint activitats');
@@ -52,7 +51,7 @@ document.getElementById('addActivityForm').addEventListener('submit', async (e) 
 
   async function deleteActivity(id) {
     try {
-        const url=process.env.app.url+":5001/activities";
+        const url=window.location.origin+":5001/activities";
 
       const response = await fetch(url + `${id}`, { method: 'DELETE' });
       if (!response.ok) throw new Error('Error eliminant activitat');
