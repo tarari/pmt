@@ -6,7 +6,7 @@ document.getElementById('addStudentForm').addEventListener('submit', async (e) =
     const student = {
       name: document.getElementById('name').value,
       email: document.getElementById('email').value,
-      group_name: document.getElementById('group').value,
+      group: document.getElementById('group').value,
     };
   const url=window.location.origin+":5001/students";
     try {
