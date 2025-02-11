@@ -6,7 +6,7 @@ CREATE TABLE students (
   id INT AUTO_INCREMENT PRIMARY KEY,
   name VARCHAR(100) NOT NULL,
   email VARCHAR(100) UNIQUE NOT NULL,
-  group_name VARCHAR(50)
+  group VARCHAR(50)
 );
 
 CREATE TABLE activities (
