@@ -51,7 +51,7 @@ document.getElementById('addStudentForm').addEventListener('submit', async (e) =
   async function deleteStudent(id) {
     try {
         const url=window.location.origin+":5001/students";
-      const response = await fetch(url + `${id}`, { method: 'DELETE' });
+      const response = await fetch(url + `/${id}`, { method: 'DELETE' });
       if (!response.ok) throw new Error('Error eliminant estudiant');
       console.log('Estudiant eliminat correctament');
       fetchStudents();
