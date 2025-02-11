@@ -14,10 +14,13 @@
     <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onclick="window.location.href='activities.html'">Gestió d'Activitats</button>
   </div>
   <script>
-
+    const dotenv = require('dotenv');
+    dotenv.config();
+    const url_env=process.env.app.url;
     async function fetchStudents() {
+      const url=url_env+":5001/students";
       try {
-        const response = await fetch('http://actmantool.toniprojects.eu:5001/students');
+        const response = await fetch(url);
         if (!response.ok) throw new Error('Error obtenint alumnes');
         const students = await response.json();
         console.log(students); // Mostrar alumnes al navegador (debug)
